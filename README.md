@@ -1,4 +1,4 @@
-# # CICD Interview Test
+# CICD Interview Test
 ## Interviewer Project 
 
 In this project you will work on 3 main topics:
@@ -30,7 +30,7 @@ ssh -i <username>@<IP>
 ```
 
 > In order to validate that your app is actually working, you will have to nevigate to 3 different API's.
-> The webapp itself will guide you what to do in oreder to test the app (The instruction are in the main page /) 
+> The webapp itself will guide you what to do in order to test the app (The instructions are in the main page /) 
 
 
 ## Python
@@ -38,7 +38,7 @@ ssh -i <username>@<IP>
 This section will test your python skills.
 The section does not related to the kubernetes one.
 You can find a file named Tweets.json under the folder CICD/Python.
-This file is a simple Json file that contains different tweets from several usernames from different times.
+This file is a simple Json file that contains different tweets from various usernames from different times.
 Write a new python script that will have the next 2 function:
 - mostLikableTweet - A function that finds what tweet is the most likable one. The function will print the content of the tweet, the username and the likes number.
 - mostLikesPerUser - A function that finds what username has the most likes. The function will print the username and the total likes he got.
