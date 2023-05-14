@@ -1,0 +1,26 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: development
+  name: flask-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test-app
+        image: infra/interview-flask:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
