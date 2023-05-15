@@ -12,10 +12,15 @@ Each topic is estimated to take 30 minutes.
 ## Kubernetes
 
 You will deploy a simple app that runs on a kubernetes cluster.
-The app is a simple Flask webapp that connects to a mongoDB.
+The app is a simple Flask webapp that connects to a mongoDB instance.
+The webapp requires only 100Mi of ram to run properly.
+
 In the CICD\Kubernetes\Yamls you have most of the needed yamls for the app deployment.
+
 What you need to do:
+
 - Fill in the pvc.yaml file so the mongodb will be able to write its data.
+- The pvc should use a storage class named ceph-rbd-sc, the pvc size should be 5Gi.
 - Change the mongo statefulset so the root username and password will be admin admin.
 - Write a nodePort service for the webApp (port: 5000, targetPort: 5000, nodePort: 32500)
 - If you find anything else you need to change in the yamls in order to run the application. do it!
@@ -26,11 +31,12 @@ The cluster might have its own errors and bugs, handle them and fix anything tha
 In order to login into the cluster run:.
 
 ```sh
-ssh -i <username>@<IP>
+ssh -i devops@<IP>
+(password: interviewPassword)
 ```
 
-> In order to validate that your app is actually working, you will have to nevigate to 3 different API's.
-> The webapp itself will guide you what to do in order to test the app (The instructions are in the main page /) 
+In order to validate that your app is actually working, you will have to nevigate to 3 different API's.
+The webapp itself will guide you what to do in oreder to test the app (The instruction are in the main page http://<WorkerIp>:32500) 
 
 
 ## Python
@@ -38,8 +44,9 @@ ssh -i <username>@<IP>
 This section will test your python skills.
 The section does not related to the kubernetes one.
 You can find a file named Tweets.json under the folder CICD/Python.
-This file is a simple Json file that contains different tweets from various usernames from different times.
+This file is a simple Json file that contains different tweets from several usernames from different times.
 Write a new python script that will have the next 2 function:
+
 - mostLikableTweet - A function that finds what tweet is the most likable one. The function will print the content of the tweet, the username and the likes number.
 - mostLikesPerUser - A function that finds what username has the most likes. The function will print the username and the total likes he got.
 
@@ -61,3 +68,8 @@ Now, the subtasks we want you to complete are:
 1. Write a Dockerfile that will create a docker image which runs the python script you wrote earlier. The Image should also have the flask module installed.
 2. Create a Jenkinsfile that builds this docker image, tags it and pushes it into dockerhub using the credentials you were given before. The tag should be python-script:latest.
 3. Use this Jenkinsfile so this CI will happen on every push to this repo.
+
+
+
+### Good Luck !!
+
