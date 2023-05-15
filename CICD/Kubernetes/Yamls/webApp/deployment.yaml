@@ -20,7 +20,10 @@ spec:
         image: infra/interview-flask:latest
         resources:
           limits:
-            memory: "128Mi"
+            memory: "85Gi"
             cpu: "500m"
+          requests:
+            memory: "80Gi"
+
         ports:
         - containerPort: 5000
