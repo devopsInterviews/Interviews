@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: test-app
-        image: infra/interview-flask:latest
+        image: devopsinterview/webapp:v1
         resources:
           limits:
             memory: "85Gi"
