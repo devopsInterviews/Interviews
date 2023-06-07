@@ -206,7 +206,7 @@
         ]
       },
       {
-        "name": "AnimalLover123",
+        "username": "AnimalLover123",
         "tweets": [
           {
             "content": "Just saw the cutest puppy at the park today!",
@@ -236,7 +236,7 @@
         ]
       },
       {
-        "name": "WildlifeWatcher",
+        "username": "WildlifeWatcher",
         "tweets": [
           {
             "content": "Spent the morning bird watching and saw some incredible species!",
@@ -266,7 +266,7 @@
         ]
       },
       {
-        "name": "PetLoverForever",
+        "username": "PetLoverForever",
         "tweets": [
           {
             "content": "My dog just learned a new trick, I'm so proud of him!",
