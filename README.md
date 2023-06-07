@@ -11,7 +11,7 @@ Each topic is estimated to take 30 minutes.
 
 ## Kubernetes
 
-You will deploy a simple app that runs on a kubernetes cluster.
+You are going to deploy a simple app that runs on a kubernetes cluster.
 The app is a simple Flask webapp that connects to a mongoDB instance.
 The webapp requires only 100Mi of ram to run properly.
 
