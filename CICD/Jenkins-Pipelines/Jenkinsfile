@@ -1,0 +1,44 @@
+pipeline {
+    agent {
+        label 'Docker-Workers' // Label for the Jenkins worker with Docker installed
+    }
+    
+    environment {
+        IMAGE_TAG =  // Tag the image with the Jenkins build number
+        DOCKER_IMAGE_NAME =  // Replace with your desired Docker image name
+    }
+    
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git url: 'https://github.com/devopsInterviews/Interviews.git', branch: 'test' // Replace with your repository URL
+            }
+        }
+        
+        stage('Build & Tag Docker Image') {
+            steps {
+
+            }
+        }
+        
+        stage('Tag Docker Image') {
+            steps {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerhub-credentials',
+                usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD']]){
+
+                }
+            }
+        }
+        
+        stage('Push Docker Image') {
+            steps {
+
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerhub-credentials',
+                usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD']]){
+
+                }
+                
+            }
+        }
+    }
+}
