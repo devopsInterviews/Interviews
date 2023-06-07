@@ -13,14 +13,14 @@ Each topic was estimated to take 30 minutes.
 
 You are going to deploy a simple app that runs on a kubernetes cluster.
 The app is a simple Flask webapp that connects to a mongoDB instance.
-The webapp requires only 100Mi of ram to run properly.
+The webapp requires only 100Mi of ram and 200m of cpu to run properly.
 
 In the CICD\Kubernetes\Yamls you have most of the needed yamls for the app deployment.
 
 What you need to do:
 
 - Fill in the pvc.yaml file so the mongodb will be able to write its data.
-- The pvc should use a storage class named ceph-rbd-sc, the pvc size should be 5Gi.
+- The pvc should can use the host storage (with a pv that also should be created), the pvc size should be 5Gi.
 - Change the mongo statefulset so the root username and password will be admin admin.
 - Write a nodePort service for the webApp (port: 5000, targetPort: 5000, nodePort: 32500)
 - If you find anything else you need to change in the yamls in order to run the application. do it!
@@ -28,11 +28,10 @@ What you need to do:
 
 The cluster might have its own errors and bugs, handle them and fix anything that comes up!
 
-In order to login into the cluster run:.
+The kubeconfig was already seted, so in order to run commands you can just do:
 
 ```sh
-ssh -i devops@<IP>
-(password: interviewPassword)
+kubectl get ns
 ```
 
 In order to validate that your app is actually working, you will have to nevigate to 3 different API's.
@@ -60,15 +59,17 @@ In the kubernetes cluster under the devops-tools namespace there is a jenkins po
 find its service and login into the Jenkins UI with the credetails below:
 ```sh
 username: admin
-password: admin
+password: whynotcircleci
 ```
 
 Now, the subtasks we want you to complete are:
 
-1. Write a Dockerfile that will create a docker image which runs the python script you wrote earlier. The Image should also have the flask module installed.
-2. Create a Jenkinsfile that builds this docker image, tags it and pushes it into dockerhub using the credentials you were given before. The tag should look like python-script:<BUILD_NYMBER>.
-3. Use this Jenkinsfile so run the job "my-job" on the Jenkins UI. The trigger can be by clicking the build now button.
-
+1. Write a Dockerfile that will create a docker image which runs the python script you wrote earlier. The Image should also have the flask module installed from the requirements.txt filr. (The Dockerfile & requirements.txt alreay exists but empty)
+2. Clone the Interview repository, checkout to a new branch named test, add the Dockerfile from the step above and push the new changes and branch to the remote repoistory.
+3. Use the Jenkinsfile from CICD/Jenkins-Pipeline/Jenkinsfile, which is already has some code in it in order to finish this task. We need you to fill the missings so that the Jenkinsfile will do the following:
+ a. builds the docker image from step 1.
+ b. tags it and pushes it into dockerhub using the credentials that are stored in the Jenkins (you can see in the Jenkinsfile how the username & password are called). The tag should look like python-script:<BUILD_NYMBER>.
+4. Use this Jenkinsfile to run the job "my-job" on the Jenkins UI. The trigger can be by clicking the build now button. The job is already there, you just need to edit it.
 
 
 ### Good Luck !!
