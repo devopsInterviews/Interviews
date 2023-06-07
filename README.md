@@ -7,7 +7,7 @@ In this project you will work on 3 main topics:
 - Jenkins pipelines
 
 You will get 90 minutes to complete the project.
-Each topic is estimated to take 30 minutes.
+Each topic was estimated to take 30 minutes.
 
 ## Kubernetes
 
@@ -48,7 +48,7 @@ This file is a simple Json file that contains different tweets from several user
 Write a new python script that will have the next 2 function:
 
 - mostLikableTweet - A function that finds what tweet is the most likable one. The function will print the content of the tweet, the username and the likes number.
-- mostLikesPerUser - A function that finds what username has the most likes. The function will print the username and the total likes he got.
+- mostLikesPerUser - A function that finds what username has the most total likes. The function will print the username and the total likes he got.
 
 
 
