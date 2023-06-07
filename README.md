@@ -57,7 +57,7 @@ Write a new python script that will have the next 2 function:
 The last step of this project is going to deal with a CI / CD while focusing on the CI part.
 
 In the kubernetes cluster under the devops-tools namespace there is a jenkins pod.
-find its service and login into the Jenkins UI with the credetails 
+find its service and login into the Jenkins UI with the credetails below:
 ```sh
 username: admin
 password: admin
@@ -66,8 +66,8 @@ password: admin
 Now, the subtasks we want you to complete are:
 
 1. Write a Dockerfile that will create a docker image which runs the python script you wrote earlier. The Image should also have the flask module installed.
-2. Create a Jenkinsfile that builds this docker image, tags it and pushes it into dockerhub using the credentials you were given before. The tag should be python-script:latest.
-3. Use this Jenkinsfile so this CI will happen on every push to this repo.
+2. Create a Jenkinsfile that builds this docker image, tags it and pushes it into dockerhub using the credentials you were given before. The tag should look like python-script:<BUILD_NYMBER>.
+3. Use this Jenkinsfile so run the job "my-job" on the Jenkins UI. The trigger can be by clicking the build now button.
 
 
 
