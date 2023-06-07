@@ -28,14 +28,14 @@ What you need to do:
 
 The cluster might have its own errors and bugs, handle them and fix anything that comes up!
 
-The kubeconfig was already seted, so in order to run commands you can just do:
+The kubeconfig was already set, so in order to run commands you can just do:
 
 ```sh
 kubectl get ns
 ```
 
 In order to validate that your app is actually working, you will have to nevigate to 3 different API's.
-The webapp itself will guide you what to do in oreder to test the app (The instruction are in the main page http://<WorkerIp>:32500) 
+The webapp itself will guide you what to do in oreder to test the app (The instruction are in the main page http://< WorkerIp >:32500) 
 
 
 ## Python
