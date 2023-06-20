@@ -64,7 +64,7 @@ password: whynotcircleci
 
 Now, the subtasks we want you to complete are:
 
-1. Write a Dockerfile that will create a docker image which runs the python script you wrote earlier. The Image should also have the flask module installed from the requirements.txt filr. (The Dockerfile & requirements.txt alreay exists but empty)
+1. Write a Dockerfile that will create a docker image which runs the python script you wrote earlier. The Image should also have the flask module installed from the requirements.txt file. (The Dockerfile & requirements.txt alreay exists but empty)
 2. Clone the Interview repository, checkout to a new branch named test, add the Dockerfile from the step above and push the new changes and branch to the remote repoistory.
 3. Use the Jenkinsfile from CICD/Jenkins-Pipeline/Jenkinsfile, which is already has some code in it in order to finish this task. We need you to fill the missings so that the Jenkinsfile will do the following:
  a. builds the docker image from step 1.
