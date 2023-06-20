@@ -20,7 +20,7 @@ In the CICD\Kubernetes\Yamls you have most of the needed yamls for the app deplo
 What you need to do:
 
 - Fill in the pvc.yaml file so the mongodb will be able to write its data.
-- The pvc should can use the host storage (with a pv that also should be created), the pvc size should be 5Gi.
+- The pvc can use the host storage (with a pv that also should be created), the pvc size should be 5Gi.
 - Change the mongo statefulset so the root username and password will be admin admin.
 - Write a nodePort service for the webApp (port: 5000, targetPort: 5000, nodePort: 32500)
 - If you find anything else you need to change in the yamls in order to run the application. do it!
