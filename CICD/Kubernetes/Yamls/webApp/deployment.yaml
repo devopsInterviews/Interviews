@@ -20,10 +20,10 @@ spec:
         image: devopsinterview/webapp:v1
         resources:
           limits:
-            memory: "85Gi"
-            cpu: "500m"
+            memory: "200Mi"
+            cpu: "200m"
           requests:
-            memory: "80Gi"
+            memory: "100Mi"
 
         ports:
         - containerPort: 5000
