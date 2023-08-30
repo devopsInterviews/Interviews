@@ -19,8 +19,8 @@ def getMostLikedOfUser(user_tweets):
     for tweet in user_tweets["tweets"]:
         if tweet["likes"] >= mostLiked["likes"]:
             mostLiked["username"] = user_tweets["username"]
-            mostLiked["content"] = user_tweets["content"]
-            mostLiked["likes"] = user_tweets["likes"]
+            mostLiked["content"] = tweet["content"]
+            mostLiked["likes"] = tweet["likes"]
 
     return mostLiked
 
@@ -62,9 +62,10 @@ def mostLikesPerUser():
     }
 
     for tweets_per_user in tweets:
-        if get_sum_of_likes_per_user(tweets_per_user) >= mostLikedUser["totalLikes"]:
+        user_likes_sum = get_sum_of_likes_per_user(tweets_per_user)
+        if user_likes_sum >= mostLikedUser["totalLikes"]:
             mostLikedUser["username"] = tweets_per_user["username"]
-            mostLikedUser["totalLikes"] = tweets_per_user["totalLikes"]
+            mostLikedUser["totalLikes"] = user_likes_sum
 
     print(f'"username": {mostLikedUser["username"]}')
     print(f'"mostLikedUser": {mostLikedUser["totalLikes"]}')
