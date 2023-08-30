@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+spec:
+  defaultBackend:
+    service:
+      name: webapp-service
+      port:
+        number: 80
