@@ -23,10 +23,10 @@
             env: 
               - 
                 name: "MONGO_INITDB_ROOT_USERNAME"
-                value: "admin"
+                value: "xxxx"
               -
                 name: "MONGO_INITDB_ROOT_PASSWORD"
-                value: "admin"
+                value: "xxxx"
               - 
                 name: MONGO_INITDB_DATABASE
                 value: todo_db
