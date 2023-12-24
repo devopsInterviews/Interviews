@@ -79,7 +79,8 @@ Now, the subtasks we want you to complete are:
 
 Zoom Link:
 
-https://zoom.us/j/99011837014?pwd=ek5wMUNuNVNpeGszSUlMUVMzT0lJQT09
+https://zoom.us/j/94933147998?pwd=OVhNQnFYaCt1K0NuMW42MGRsNlExQT09
+
 
 
 
