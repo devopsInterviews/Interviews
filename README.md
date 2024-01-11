@@ -83,6 +83,14 @@ https://zoom.us/j/94699920593?pwd=RktGNDFqVDdjOEkzYWhEbFdFdGF2Zz09
 
 
 
+default via 10.22.4.1 dev wlp4s0 proto dhcp metric 600 
+10.22.4.0/23 dev wlp4s0 proto kernel scope link src 10.22.4.25 metric 600 
+169.254.0.0/16 dev wlp4s0 scope link metric 1000 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+
+
+
+
 
 
 
