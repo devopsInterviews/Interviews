@@ -4,8 +4,8 @@ pipeline {
     }
     
     environment {
-        IMAGE_TAG =  // Tag the image with the Jenkins build number
-        DOCKER_IMAGE_NAME =  // Replace with your desired Docker image name
+        IMAGE_TAG =  env.BUILD_NUMBER // Tag the image with the Jenkins build number
+        DOCKER_IMAGE_NAME =  "python-script" // Replace with your desired Docker image name
     }
     
     stages {
