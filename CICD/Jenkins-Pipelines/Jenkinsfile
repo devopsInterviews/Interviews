@@ -5,7 +5,7 @@ pipeline {
     
     environment {
         IMAGE_TAG = ${BUILD_NUMBER} // Tag the image with the Jenkins build number
-        DOCKER_IMAGE_NAME =  // Replace with your desired Docker image name
+        DOCKER_IMAGE_NAME = "tweets" // Replace with your desired Docker image name
     }
     
     stages {
@@ -17,28 +17,34 @@ pipeline {
         
         stage('Build & Tag Docker Image') {
             steps {
-
-            }
-        }
-        
-        stage('Tag Docker Image') {
-            steps {
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerhub-credentials',
-                usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD']]){
-
+                script {
+                    sh 'docker build -t devopsinterview/${DOCKER_IMAGE_NAME}:${IMAGE_TAG} .'
+                    def dockerImage = docker.image("evopsinterview/${DOCKER_IMAGE_NAME}:${IMAGE_TAG}")
+                    docker.withRegistry('https://index.docker.io/v1/', "dockerhub-credentials") {
+                        dockerImage.push()
+                    }
                 }
             }
         }
         
-        stage('Push Docker Image') {
-            steps {
+        // stage('Tag Docker Image') {
+        //     steps {
+        //         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerhub-credentials',
+        //         usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD']]){
+                    
+        //         }
+        //     }
+        // }
+        
+        // stage('Push Docker Image') {
+        //     steps {
 
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerhub-credentials',
-                usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD']]){
+        //         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerhub-credentials',
+        //         usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD']]){
 
-                }
+        //         }
                 
-            }
-        }
+        //     }
+        // }
     }
 }
