@@ -4,7 +4,7 @@ pipeline {
     }
     
     environment {
-        IMAGE_TAG = ${BUILD_NUMBER} // Tag the image with the Jenkins build number
+        IMAGE_TAG = '${BUILD_NUMBER}' // Tag the image with the Jenkins build number
         DOCKER_IMAGE_NAME = "tweets" // Replace with your desired Docker image name
     }
     
